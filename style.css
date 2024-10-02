@@ -3,8 +3,12 @@
     /* border: 1px solid black; */
 }
 
+html, body {
+    height: 100%;
+}
+
 .container {
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
