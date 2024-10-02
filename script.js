@@ -1,32 +1,25 @@
-let state = "light";
-const container = document.getElementById("container");
-const switchBg = document.getElementById("switch-bg");
-const switchSlider = document.getElementById("switch-slider");
-const icon = document.getElementById("icon");
+"use strict";
 
-function switchThemeMode() {
-    const containerClasses = container.className.split(" ");
-    const switchBgClasses = switchBg.className.split(" ");
-    const switchSliderClasses = switchSlider.className.split(" ");
-    if (state === "light") {
-        const newState = "dark";
-        containerClasses[1] = newState;
-        switchBgClasses[1] = newState;
-        switchSliderClasses[1] = newState;
-        icon.src = "assets/dark-mode.png";
-        state = newState;
+function switchTheme() {
+    let newState;
+    if (curState === "light") {
+        newState = "dark";
     }
     else {
-        const newState = "light";
-        containerClasses[1] = newState;
-        switchBgClasses[1] = newState;
-        switchSliderClasses[1] = newState;
-        icon.src = "assets/light-mode.png";
-        state = newState;
+        newState = "light";
     }
-    container.className = containerClasses.join(" ");
-    switchBg.className = switchBgClasses.join(" ");
-    switchSlider.className = switchSliderClasses.join(" ");
+
+    const container = document.getElementById("container");
+    container.className = container.className.replace(curState, newState);
+
+    const switchBg = document.getElementById("switch-bg");
+    switchBg.className = switchBg.className.replace(curState, newState);
+
+    switchSlider.className = switchSlider.className.replace(curState, newState);
+
+    curState = newState;
 }
 
-switchSlider.addEventListener("click", switchThemeMode);
+let curState = "light";
+const switchSlider = document.getElementById("switch-slider");
+switchSlider.addEventListener("click", switchTheme);

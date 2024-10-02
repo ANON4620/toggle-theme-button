@@ -1,67 +1,61 @@
 * {
     margin: 0;
+    /* border: 1px solid black; */
 }
 
 .container {
-    height: 600px;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition-property: background-color;
+    transition-duration: 1s;
 }
 
 .container.light {
     background-color: white;
-    transition-duration: 1s;
 }
 
 .container.dark {
     background-color: rgb(6, 6, 21);
-    transition-property: background-color;
-    transition-duration: 1s;
 }
 
 .switch-bg {
     height: 100px;
     width: 200px;
     padding: 5px;
-    border-radius: 50px;
+    border-radius: 60px;
+    transition-property: background-color;
+    transition-duration: 1s;
 }
 
 .switch-bg.light {
     background-color: grey;
-    transition-duration: 1s;
 }
 
 .switch-bg.dark {
     background-color: rgb(53, 53, 73);
-    transition-property: background-color;
-    transition-duration: 1s;
 }
 
 .switch-slider {
     height: 100px;
     width: 100px;
     border-radius: 100px;
-    float: left;
-    background-color: white;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.switch-slider.light {
-    background-color: white;
-    transition-duration: 1s;
-}
-
-.switch-slider.dark {
-    background-color: rgb(119, 119, 119);
-    transform: translate(100px, 0px);
     transition-property: transform, background-color;
     transition-duration: 1s;
 }
 
-img {
-    height: 80px;
-    width: 80px;
+.switch-slider.light {
+    background-color: white;
+    background-image: url("assets/light-mode.png");
+}
+
+.switch-slider.dark {
+    background-color: rgb(119, 119, 119);
+    background-image: url("assets/dark-mode.png");
+    transform: translate(100px, 0px);
 }
