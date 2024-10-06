@@ -22,7 +22,7 @@
 
 .switch-bg {
     height: 100px;
-    width: 200px;
+    min-width: 200px;
     padding: 5px;
     border-radius: 60px;
     transition-property: background-color;
